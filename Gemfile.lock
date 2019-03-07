@@ -2,11 +2,15 @@ PATH
   remote: .
   specs:
     binary_transformer (0.1.0)
+      kirinnee_core (~> 0.2.1)
+      mimemagic (~> 0.3.3)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.3)
+    kirinnee_core (0.2.1)
+    mimemagic (0.3.3)
     rake (10.5.0)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)

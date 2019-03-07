@@ -1,7 +1,12 @@
 # BinaryTransformer
 
 Interface and executor for a transformers to transform byte arrays in a pipeline-based
-design programmatically in ruby
+design programmatically in ruby.
+
+This can be used to parse text blobs, resize image, compress music, encode video... etc
+
+Currently, these binaries are available:
+- NONE
 
 ## Installation
 
@@ -21,7 +26,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Using transformers
+
+Assuming you have a few image transformers <br>
+`ImageCompressor` that compress images, <br>
+ `ImageResizer` that resizes images, <br>
+ `Sepia` that converts image to sepia, <br>
+ and `Blur` that blurs the image <br>
+ which all implements
+the `BinaryTransformer::Transformer` interface, the usage is as follows:
+
+```ruby
+# Transformer instances
+compressor = ImageCompressor.new
+resize = ImageResizer.new
+sepia = SepiaTransformer.new
+blur = BlurTransformer.new
+# Obtain Binary
+binary IO.binread "image.png"
+
+# Extend the binary
+binary.extend StreamLike
+
+# Pipe the binary through the transformers. Use >> to chain and >  for the last transformer
+converted = binary >> compressor >> resize >> sepia > blur  
+ 
+ # Write the binary back
+ IO.binwrite "converted.png", converted 
+```
 
 ## Development
 
