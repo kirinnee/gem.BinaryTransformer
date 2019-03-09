@@ -5,8 +5,10 @@ design programmatically in ruby.
 
 This can be used to parse text blobs, resize image, compress music, encode video... etc
 
-Currently, these binaries are available:
-- NONE
+Currently, these binary transformers are available:
+- [Image Resizer](https://gitlab.com/ruby-gem/image-resizer)
+- [PngQuant](https://gitlab.com/ruby-gem/pngquant)
+- [JpegOptim](https://gitlab.com/ruby-gem/jpegoptim)
 
 ## Installation
 
